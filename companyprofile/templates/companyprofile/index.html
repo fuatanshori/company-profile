@@ -1,0 +1,389 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <section id="intro">
+    <div class="intro-content">
+      <div class="col-lg-8">
+        <h3>{{title}}</h3>
+        <p>
+            {{description}}          
+        </p>
+        <div>
+          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="intro-carousel" class="owl-carousel">
+      <div
+        class="item"
+        style="background-image: url({{background_image.url}})"
+      ></div>
+    </div>
+  </section>
+
+
+  <main id="main">
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 about-img">
+            <img src="{% static 'img/Logo_PLN.png' %}" alt="" />
+          </div>
+
+          <div class="col-lg-6 content">
+            <h2>About Us</h2>
+            <p>
+              Sed tamen tempor magna labore dolore dolor sint tempor duis
+              magna elit veniam aliqua esse amet veniam enim export quid quid
+              veniam aliqua eram noster malis nulla duis fugiat culpa esse
+              aute nulla ipsum velit export irure minim illum fore
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #about -->
+
+    <!--==========================
+    Services Section
+  ============================-->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Services</h2>
+          <p>
+            Sed tamen tempor magna labore dolore dolor sint tempor duis magna
+            elit veniam aliqua esse amet veniam enim export quid quid veniam
+            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
+            ipsum velit export irure minim illum fore
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div style=" cursor: default;">
+                <div class="icon"><i class="fa fa-battery-half"></i></div>
+                <h4>Program Efisiensi Energi</h4>
+              <p class="description">
+                Voluptatum deleniti atque corrupti quos dolores et quas
+                molestias excepturi sint occaecati cupiditate non provident
+                etiro rabeta lingo. 
+              </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="fa fa-wrench"></i></div>
+              <h4 class="title"><a href="">Pemeliharaan dan Perbaikan</a></h4>
+              <p class="description">
+                Minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat tarad limino ata nodera
+                clas.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+              <div class="icon"><i class="fa fa-users"></i></div>
+              <h4 class="title"><a href="">Layanan Pelanggan</a></h4>
+              <p class="description">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur trinige zareta lobur
+                trade.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight" data-wow-delay="0.2s">
+              <div class="icon"><i class="fa fa-question-circle"></i></div>
+              <h4 class="title"><a href="">Layanan Konsultasi Teknis</a></h4>
+              <p class="description">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum rideta zanox
+                satirente madera
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #services -->
+
+    <!--==========================
+    Our Portfolio Section
+  ============================-->
+    <section id="portfolio" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>PLN GALERY</h2>
+          <p>
+            Sed tamen tempor magna labore dolore dolor sint tempor duis magna
+            elit veniam aliqua esse amet veniam enim export quid quid veniam
+            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
+            ipsum velit export irure minim illum fore
+          </p>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 1</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 2</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 3</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 4</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 5</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 6</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 7</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h2 class="wow fadeInUp">GALERY ITEM 8</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #portfolio -->
+
+    <!--==========================
+    Call To Action Section
+  ============================-->
+    <section id="call-to-action" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <h3 class="cta-title">SILAHKAN HUBUNGI TIM KAMI</h3>
+            <p class="cta-text">
+              kami telah menyediakan fitur chat real-time silahkan untuk
+              menghubungi dengan klik tombol dibawah ini
+            </p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">HUBUNGI</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #call-to-action -->
+
+    <!--==========================
+    Contact Section
+  ============================-->
+    <section id="contact" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>
+            Sed tamen tempor magna labore dolore dolor sint tempor duis magna
+            elit veniam aliqua esse amet veniam enim export quid quid veniam
+            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
+            ipsum velit export irure minim illum fore
+          </p>
+        </div>
+
+        <div class="row contact-info">
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>
+                Jalan Trans Kalimantan KM 75, Desa Buntoi, Kecamatan Kahayan
+                Hilir, Kabupaten Pulang Pisau, Propinsi Kalimantan Tengah,
+                74861, Indonesia
+              </address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+62888888888</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7969.958827146013!2d114.20127759357909!3d-2.822140299999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de4809c26c1fa4d%3A0x19afdeccec4715ea!2sPT.%20PLN%20Nusantara%20Power%20Pulang%20Pisau%202x60MW!5e0!3m2!1sid!2sid!4v1692030862753!5m2!1sid!2sid"
+          height="450"
+          style="border: 0; width: 100%"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="container">
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="#" method="get">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  data-rule="minlen:4"
+                  data-msg="Please enter at least 4 chars"
+                />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  data-rule="email"
+                  data-msg="Please enter a valid email"
+                />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
+                data-rule="minlen:4"
+                data-msg="Please enter at least 8 chars of subject"
+              />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                name="message"
+                rows="5"
+                data-rule="required"
+                data-msg="Please write something for us"
+                placeholder="Message"
+              ></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary" type="submit">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- #contact -->
+  </main>
+{% endblock content %}

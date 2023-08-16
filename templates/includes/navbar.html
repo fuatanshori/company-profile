@@ -1,0 +1,33 @@
+<header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <h1 style="font-size:30px;">
+          <a href="#body" class="scrollto">PLN<span>PULPIS</span></a>
+        </h1>
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="#body">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Galery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          {% if request.user.is_authenticated %}
+          <li>
+            <a class="btn btn-primary text-white" href="{% url 'user:logout' %}"
+              ><i class="fa fa-sign-out"></i> Logout</a
+            >
+          </li>
+          {% else %}
+          <li>
+            <a class="btn btn-primary text-white" href=""
+              ><i class="fa fa-sign-in"></i> Login</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
