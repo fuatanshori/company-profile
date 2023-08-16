@@ -1,4 +1,5 @@
 ---
 deployment:
 tasks:
--export DEPLOYPATH=home/
+- export DEPLOYPATH=home/
+- /bin/cp -r * $DEPLOYPATH
