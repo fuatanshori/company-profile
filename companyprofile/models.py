@@ -1,11 +1,11 @@
 from django.db import models
-
+from .validatiors  import validate_aspect_ratio_1920_900
 # Create your models here.
 class Intro(models.Model):
     title   = models.CharField(max_length=20)
     description = models.TextField(max_length=655)
     is_published = models.BooleanField(default=False)
-    background_image = models.ImageField(upload_to='media/bgintro')
+    background_image = models.ImageField(upload_to='media/bgintro',validators=[validate_aspect_ratio_1920_900])
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -13,7 +13,8 @@ class Intro(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+     
 class AboutUs(models.Model):
     title = models.CharField(max_length=20)
     description = models.TextField(max_length=655)
