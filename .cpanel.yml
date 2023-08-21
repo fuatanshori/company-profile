@@ -1,5 +1,0 @@
----
-deployment:
-tasks:
-- export DEPLOYPATH=home/u1572740/companyprofile
-- /bin/cp -r * $DEPLOYPATH

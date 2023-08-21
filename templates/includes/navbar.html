@@ -17,13 +17,13 @@
           <li><a href="#contact">Contact</a></li>
           {% if request.user.is_authenticated %}
           <li>
-            <a class="btn btn-primary text-white" href="{% url 'user:logout' %}"
+            <a class="text-dark" href="{% url 'user:logout' %}"
               ><i class="fa fa-sign-out"></i> Logout</a
             >
           </li>
           {% else %}
           <li>
-            <a class="btn btn-primary text-white" href=""
+            <a class="text-dark" href=""
               ><i class="fa fa-sign-in"></i> Login</a
             >
           </li>
