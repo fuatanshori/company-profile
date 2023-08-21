@@ -18,7 +18,7 @@ class IntroAdmin(admin.ModelAdmin):
             return super().has_delete_permission(request, obj)
         
     def get_readonly_fields(self, request, obj=None):
-        if obj is None:  # Tidak ada objek yang ada (sedang membuat baru)
+        if obj is None: 
             return self.readonly_fields
         else:
             queryset = self.model.objects.all()
