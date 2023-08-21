@@ -1,5 +1,5 @@
 from django.contrib import admin 
-from .models import Intro,AboutUs
+from .models import Intro,AboutUs,MenuServices,Services
 
 # Register your models here.
 @admin.register(Intro)
@@ -56,3 +56,11 @@ class AboutUsAdmin(admin.ModelAdmin):
             else:
                 return self.readonly_fields
  
+
+@admin.register(MenuServices)
+class AdminMenuServices(admin.ModelAdmin):
+    pass
+
+@admin.register(Services)
+class AdminServices(admin.ModelAdmin):
+    pass
