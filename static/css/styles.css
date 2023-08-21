@@ -141,7 +141,7 @@ h6 {
 }
 
 #header #logo h1 a {
-  color: #edf108;
+  color: #ffee00;
   line-height: 1;
   display: inline-block;
 }
@@ -251,7 +251,7 @@ h6 {
 
 #intro #intro-carousel::before {
   content: '';
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(148, 148, 148, 0.7);
   position: absolute;
   height: 100%;
   width: 100%;

@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block content %}
-
+  {% comment %} intro {% endcomment %}
   <section id="intro">
     <div class="intro-content">
       <div class="col-lg-8">
-        <h3>{{title}}</h3>
+        <h3>{{intro_title}}</h3>
         <p style="font-size:15px;">
-            {{description}}          
+            {{intro_description}}          
         </p>
         <div>
           <a href="#about" class="btn-get-started scrollto">Get Started</a>
@@ -19,27 +19,24 @@
     <div id="intro-carousel" class="owl-carousel">
       <div
         class="item"
-        style="background-image: url({{background_image.url}})"
+        style="background-image: url({{intro_background_image.url}})"
       ></div>
     </div>
   </section>
-
+  {% comment %} end intro  {% endcomment %}
 
   <main id="main">
     <section id="about" class="wow fadeInUp">
       <div class="container">
         <div class="row">
           <div class="col-lg-5 about-img">
-            <img src="{% static 'img/Logo_PLN.png' %}" alt="" />
+            <img src="{{aboutus_image.url}}" alt="" />
           </div>
 
           <div class="col-lg-6 content">
-            <h2>About Us</h2>
+            <h2>{{ aboutus_title}}</h2>
             <p>
-              Sed tamen tempor magna labore dolore dolor sint tempor duis
-              magna elit veniam aliqua esse amet veniam enim export quid quid
-              veniam aliqua eram noster malis nulla duis fugiat culpa esse
-              aute nulla ipsum velit export irure minim illum fore
+              {{aboutus_description}}
             </p>
           </div>
         </div>
