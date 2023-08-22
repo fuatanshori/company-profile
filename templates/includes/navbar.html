@@ -15,15 +15,21 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Galery</a></li>
           <li><a href="#contact">Contact</a></li>
-          {% if request.user.is_authenticated %}
+          {% if request.user.role == "visitor" %}
           <li>
-            <a class="text-dark" href="{% url 'user:logout' %}"
+            <a  href="{% url 'user:logout' %}"
               ><i class="fa fa-sign-out"></i> Logout</a
+            >
+          </li>
+          {% elif request.user.role == "admin" %}
+          <li>
+            <a  href=""
+              ><i class=""></i> Dashboard</a
             >
           </li>
           {% else %}
           <li>
-            <a class="text-dark" href=""
+            <a  href="{% url 'admin:index' %}"
               ><i class="fa fa-sign-in"></i> Login</a
             >
           </li>

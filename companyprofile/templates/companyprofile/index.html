@@ -5,8 +5,8 @@
   {% comment %} intro {% endcomment %}
   <section id="intro">
     <div class="intro-content">
-      <div class="col-lg-8">
-        <h3>{{intro_title}}</h3>
+      <div class="col-lg-10">
+        <h2 style="color:#555555;font-family: roboto;">{{intro_title}}</h2>
         <p style="font-size:15px;">
             {{intro_description}}          
         </p>
@@ -60,7 +60,7 @@
           {% for service_menu_service in service_menu_services.all %}
           <div class="col-lg-6">
             <div class="box wow fadeInLeft">
-              <div style=" cursor: default;">
+              <div style="cursor: default;">
                 <div class="icon"><i class="{{service_menu_service.icon}}"></i></div>
                 <h4>{{service_menu_service.title_menu}}</h4>
               <p class="description">

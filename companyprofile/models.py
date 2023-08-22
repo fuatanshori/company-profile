@@ -6,7 +6,7 @@ class Intro(models.Model):
     description         = models.TextField(max_length=655)
     is_published        = models.BooleanField(default=False)
     background_image    = models.ImageField(upload_to='media/bgintro',validators=[validate_aspect_ratio_1920_900])
-    created_at          = models.DateTimeField(auto_now_add=True)
+    created_at          = models.DateTimeField(auto_now_add=True,editable=False)
 
     class Meta:
         verbose_name_plural='Intro'
@@ -20,7 +20,7 @@ class AboutUs(models.Model):
     description     = models.TextField(max_length=655)
     image           = models.ImageField(upload_to='media/aboutus')
     is_published    = models.BooleanField(default=False)
-    created_at      = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    created_at      = models.DateTimeField(auto_now_add=True,null=True,blank=True,editable=False)
     
     class Meta:
         verbose_name_plural='About Us'
@@ -31,8 +31,8 @@ class AboutUs(models.Model):
 class MenuServices(models.Model):
     title_menu          = models.CharField(max_length=30)
     icon                = models.CharField(max_length=40)
-    description_menu    = models.CharField(max_length=130)
-    created_at          = models.DateTimeField(auto_now_add=True)
+    description_menu    = models.TextField(max_length=140)
+    created_at          = models.DateTimeField(auto_now_add=True,editable=False)
 
     class Meta:
         verbose_name_plural = "MenuServices"
@@ -45,7 +45,7 @@ class Services(models.Model):
     description     = models.TextField(max_length=400)
     menu_services   = models.ManyToManyField(MenuServices)
     is_published    = models.BooleanField(default=False)
-    created_at      = models.DateTimeField(auto_now_add=True)
+    created_at      = models.DateTimeField(auto_now_add=True,editable=False)
 
     class Meta:
         verbose_name_plural = "Services"
