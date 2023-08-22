@@ -285,7 +285,8 @@
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form action="#" method="get">
+          <form action="{% url 'companyprofile:send_email' %}" method="POST">
+            {% csrf_token %}  
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input

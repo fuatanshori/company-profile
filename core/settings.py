@@ -255,3 +255,12 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {"auth.user": "horizontal_tabs", "auth.group": "horizontal_tabs"},
     # Add a language dropdown into the admin
 }
+from decouple import config
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS =True
+EMAIL_HOST_USER='exampleweb12@gmail.com'
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+SERVER_EMAIL='exampleweb12@gmail.com'
+DEFAULT_FROM_EMAIL='exampleweb12@gmail.com'
