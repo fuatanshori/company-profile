@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['companyprofile.xdeveloperweb.com','www.companyprofile.xdevelop
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -255,6 +255,8 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {"auth.user": "horizontal_tabs", "auth.group": "horizontal_tabs"},
     # Add a language dropdown into the admin
 }
+
+# email
 from decouple import config
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
@@ -264,3 +266,8 @@ EMAIL_HOST_USER='exampleweb12@gmail.com'
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 SERVER_EMAIL='exampleweb12@gmail.com'
 DEFAULT_FROM_EMAIL='exampleweb12@gmail.com'
+
+# sms
+
+ACCOUNT_SID = config('ACCOUNT_SID')
+AUTH_TOKEN = config('AUTH_TOKEN')

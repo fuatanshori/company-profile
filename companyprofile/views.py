@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Intro,AboutUs,Services,Email
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
+from django.conf import settings
 # Create your views here.
 def index(request):
     intro = Intro.objects.get(is_published=True)
@@ -28,7 +29,9 @@ def send_email(request):
         name = request.POST['name']
         email = request.POST['email']
         subject = request.POST['subject']
+        phone = request.POST['phone']
         _message = request.POST['message']
+        
         try:
             mail_subject = 'Balasan Dari Instansi'
             message = render_to_string("companyprofile/email/contact.html",{
@@ -37,7 +40,6 @@ def send_email(request):
             to_email = email
             send_email = EmailMessage(mail_subject,message,to=[to_email])
             send_email.send()
-        except:
+        except :
             return redirect("companyprofile:index")
-            
     return redirect("companyprofile:index")
