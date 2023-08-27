@@ -43,10 +43,12 @@ INSTALLED_APPS = [
 # apps
 INSTALLED_APPS+=[
     'companyprofile.apps.CompanyprofileConfig',
-    'user',
-    'dashboard',
-    'intro',
-    'about'
+    'user.apps.UserConfig',
+    'dashboard.apps.DashboardConfig',
+    'intro.apps.IntroConfig',
+    'about.apps.AboutConfig',
+    'services.apps.ServicesConfig',
+    'gallery.apps.GalleryConfig',
 ]
 
 AUTH_USER_MODEL ='user.User'

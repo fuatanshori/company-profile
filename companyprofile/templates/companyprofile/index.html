@@ -15,8 +15,8 @@
 
     <div class="hero-slider swiper">
       <div class="swiper-wrapper">
-        {% for intro_background_image in intro_background_images %}
-        <div class="swiper-slide" style="background-image: url({{intro_background_image.image.url}});"></div>
+        {% for intro_image in intro_images %}
+        <div class="swiper-slide" style="background-image: url({{intro_image.bg_image.url}});"></div>
         {% endfor %}
       </div>
     </div>
@@ -59,10 +59,10 @@
           {% for service_menu_service in service_menu_services %}
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="box">
-              <div class="icon"><i class="{{service_menu_service.icon}}"></i></div>
-              <h4 class="title"><a href="#Services">{{service_menu_service.title_menu}}</a></h4>
+              <div class="icon"><i class="{{service_menu_service.menu_icon}}"></i></div>
+              <h4 class="title"><a href="#Services">{{service_menu_service.menu_title}}</a></h4>
               <p class="description">
-                {{service_menu_service.description_menu}}
+                {{service_menu_service.menu_description}}
               </p>
             </div>
           </div>
@@ -75,122 +75,31 @@
     <section id="portfolio" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>GALERY</h2>
+          <h2>{{gallery_title}}</h2>
           <p>
-            Sed tamen tempor magna labore dolore dolor sint tempor duis magna
-            elit veniam aliqua esse amet veniam enim export quid quid veniam
-            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
-            ipsum velit export irure minim illum fore
+            {{gallery_description}}
           </p>
         </div>
       </div>
 
       <div class="container-fluid">
         <div class="row no-gutters">
+          {% for gallery_image in gallery_images %}
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
+              <a href="{{gallery_image.gallery_image}}" class="portfolio-popup">
+                <img src="{{gallery_image.gallery_image}}" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 1</h2>
+                    <h2 class="wow fadeInUp">{{gallery_image.gallery_name}}</h2>
                   </div>
                 </div>
               </a>
             </div>
           </div>
+          {% endfor %}
 
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 2</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 3</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 4</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 5</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 6</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 7</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="assets/img/pln06.jpg" class="portfolio-popup">
-                <img src="assets/img/pln06.jpg" alt="" />
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">GALERY ITEM 8</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+      </div>
       </div>
     </section>
 

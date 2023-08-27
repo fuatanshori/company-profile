@@ -2,13 +2,14 @@ from django.db.models.signals import post_save,post_delete
 from django.dispatch import receiver
 from .models import Intro
 
+
 @receiver(post_save, sender=Intro)
 def single_published_intro(sender, instance, **kwargs):
     if instance.is_published:
         Intro.objects.filter(is_published=True).exclude(pk=instance.pk).update(is_published=False)   
     else:
         Intro.objects.filter(is_published=False).exclude(pk=instance.pk).update(is_published=True)   
-
+    
     publishes = Intro.objects.all()
     is_publishes=[]
     for publish in publishes:

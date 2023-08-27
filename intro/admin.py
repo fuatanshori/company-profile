@@ -1,6 +1,7 @@
 from django.contrib import admin
 from. models import Intro,BackgroundImageIntro
 # Register your models here.
+
 @admin.register(Intro)
 class IntroAdmin(admin.ModelAdmin):
     list_display=['title','is_published','created_at']
@@ -16,6 +17,7 @@ class IntroAdmin(admin.ModelAdmin):
         else:
             return super().has_delete_permission(request, obj)
         
+
     def get_readonly_fields(self, request, obj=None):
         if obj is None: 
             return self.readonly_fields

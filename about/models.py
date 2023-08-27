@@ -6,7 +6,7 @@ class About(models.Model):
     description     = models.TextField(max_length=655)
     visi            = models.TextField()
     misi            = models.TextField()
-    image           = models.ImageField(upload_to='media/aboutus')
+    image           = models.ImageField(upload_to='media/about')
     is_published    = models.BooleanField(default=False)
     created_at      = models.DateTimeField(auto_now_add=True,null=True,blank=True,editable=False)
     
