@@ -1,40 +1,21 @@
-{% load static %}
-<header id="header">
-    <div class="container">
-      <div id="logo" class="pull-left">
-        <h1 style="font-size:30px;">
-        <a href="index.html"><img src="{% static 'img/PLN-Nusantara-Power.png' %}" width="200px" alt=""></a>
-          {% comment %} <a href="#body" class="scrollto">PLN<span>PULPIS</span></a> {% endcomment %}
-        </h1>
+ {% load static %}
+ <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div id="logo">
+
+        <a href="index.html"><img src="{% static 'assets/img/pln03.png' %}" alt=""></a>
       </div>
 
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#body">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Galery</a></li>
-          <li><a href="#contact">Contact</a></li>
-          {% if request.user.role == "visitor" %}
-          <li>
-            <a  href="{% url 'user:logout' %}"
-              ><i class="fa fa-sign-out"></i> Logout</a
-            >
-          </li>
-          {% elif request.user.role == "admin" %}
-          <li>
-            <a  href=""
-              ><i class=""></i> Dashboard</a
-            >
-          </li>
-          {% else %}
-          <li>
-            <a  href="{% url 'admin:index' %}"
-              ><i class="fa fa-sign-in"></i> Login</a
-            >
-          </li>
-          {% endif %}
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Galery</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
     </div>
   </header>

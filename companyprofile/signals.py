@@ -1,56 +1,31 @@
 from django.db.models.signals import post_save,post_delete
 from django.dispatch import receiver
-from .models import Intro,AboutUs,Services
+from .models import About,Services
 
-@receiver(post_save, sender=Intro)
-def single_published_intro(sender, instance, **kwargs):
+@receiver(post_save, sender=About)
+def single_published_about(sender, instance, **kwargs):
     if instance.is_published:
-        Intro.objects.filter(is_published=True).exclude(pk=instance.pk).update(is_published=False)   
+        About.objects.filter(is_published=True).exclude(pk=instance.pk).update(is_published=False)   
     else:
-        Intro.objects.filter(is_published=False).exclude(pk=instance.pk).update(is_published=True)   
+        About.objects.filter(is_published=False).exclude(pk=instance.pk).update(is_published=True)   
 
-    publishes = Intro.objects.all()
+    publishes = About.objects.all()
     is_publishes=[]
     for publish in publishes:
         is_publishes.append(publish.is_published)
     
     if all(not item for item in is_publishes):
-        obj = Intro.objects.get(pk=instance.pk)
+        obj = About.objects.get(pk=instance.pk)
         obj.is_published=True
         obj.save()
     
-@receiver(post_delete,sender=Intro)
-def deleted_published_intro(sender,instance,*args, **kwargs):
+@receiver(post_delete,sender=About)
+def deleted_published_about(sender,instance,*args, **kwargs):
     if instance.is_published:
-        obj = Intro.objects.all().exclude(pk=instance.pk).first()
+        obj = About.objects.all().exclude(pk=instance.pk).first()
         obj.is_published=True
         obj.save()
 
-   
-    
-@receiver(post_save, sender=AboutUs)
-def single_published_aboutus(sender, instance, **kwargs):
-    if instance.is_published:
-        AboutUs.objects.filter(is_published=True).exclude(pk=instance.pk).update(is_published=False)   
-    else:
-        AboutUs.objects.filter(is_published=False).exclude(pk=instance.pk).update(is_published=True)   
-
-    publishes = AboutUs.objects.all()
-    is_publishes=[]
-    for publish in publishes:
-        is_publishes.append(publish.is_published)
-    
-    if all(not item for item in is_publishes):
-        obj = AboutUs.objects.get(pk=instance.pk)
-        obj.is_published=True
-        obj.save()
-    
-@receiver(post_delete,sender=AboutUs)
-def deleted_published_aboutus(sender,instance,*args, **kwargs):
-    if instance.is_published:
-        obj = AboutUs.objects.all().exclude(pk=instance.pk).first()
-        obj.is_published=True
-        obj.save()
 
 
 @receiver(post_save, sender=Services)
@@ -70,9 +45,9 @@ def single_published_services(sender, instance, **kwargs):
         obj.is_published=True
         obj.save()
     
-@receiver(post_delete,sender=Services)
-def deleted_published_aboutus(sender,instance,*args, **kwargs):
-    if instance.is_published:
-        obj = Services.objects.all().exclude(pk=instance.pk).first()
-        obj.is_published=True
-        obj.save()
+# @receiver(post_delete,sender=Services)
+# def deleted_published_about(sender,instance,*args, **kwargs):
+#     if instance.is_published:
+#         obj = Services.objects.all().exclude(pk=instance.pk).first()
+#         obj.is_published=True
+#         obj.save()

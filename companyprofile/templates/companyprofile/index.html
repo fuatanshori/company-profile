@@ -1,89 +1,81 @@
 {% extends 'base.html' %}
-{% load static %}
-
 {% block content %}
-  {% comment %} intro {% endcomment %}
-  <section id="intro">
-    <div class="intro-content">
-      <div class="col-lg-10">
-        <h2 style="color:#555555;font-family: roboto;">{{intro_title}}</h2>
-        <p style="font-size:15px;">
-            {{intro_description}}          
+  <section id="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h2>{{intro_title}}</h2>
+      <div class="desc-hero px-4 ">
+        <p>
+          {{intro_description}}
         </p>
-        <div>
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
-        </div>
+      </div>
+      <div>
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
       </div>
     </div>
 
-    <div id="intro-carousel" class="owl-carousel">
-      <div
-        class="item"
-        style="background-image: url({{intro_background_image.url}})"
-      ></div>
+    <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        {% for intro_background_image in intro_background_images %}
+        <div class="swiper-slide" style="background-image: url({{intro_background_image.image.url}});"></div>
+        {% endfor %}
+      </div>
     </div>
+
   </section>
-  {% comment %} end intro  {% endcomment %}
 
   <main id="main">
-    <section id="about" class="wow fadeInUp">
-      <div class="container">
+    <section id="about">
+      <div class="container" data-aos="fade-up">
         <div class="row">
-          <div class="col-lg-5 about-img">
-            <img src="{{aboutus_image.url}}" alt="" />
+          <div class="col-lg-5 about-img d-flex justify-content-center align-items-center">
+            <img src="{{about_image.url}}" class="img-control"  alt="">
           </div>
-
-          <div class="col-lg-6 content">
-            <h2>{{ aboutus_title}}</h2>
-            <p>
-              {{aboutus_description}}
-            </p>
+          
+          <div class="col-lg-7 content text-justify d-flex justify-content-center align-items-center">
+            <div class="p">
+              <h2 class="text-center">{{about_title}}</h2>
+              <p>{{about_description}}</p>
+              <h3 class="text-center">VISI</h3>
+              <p>{{about_visi}}</p>
+              <h3 class="text-center">MISI</h3>
+              <p>{{about_misi}}</p>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
-    <!-- #about -->
 
-    <!--==========================
-    Services Section
-  ============================-->
     <section id="services">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>{{service_title}}</h2>
           <p>
             {{service_description}}
           </p>
         </div>
-
-        <div class="row">
-          {% for service_menu_service in service_menu_services.all %}
-          <div class="col-lg-6">
-            <div class="box wow fadeInLeft">
-              <div style="cursor: default;">
-                <div class="icon"><i class="{{service_menu_service.icon}}"></i></div>
-                <h4>{{service_menu_service.title_menu}}</h4>
+      
+        <div class="row gy-4">
+          {% for service_menu_service in service_menu_services %}
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="box">
+              <div class="icon"><i class="{{service_menu_service.icon}}"></i></div>
+              <h4 class="title"><a href="#Services">{{service_menu_service.title_menu}}</a></h4>
               <p class="description">
-                {{service_menu_service.description_menu}} 
+                {{service_menu_service.description_menu}}
               </p>
-              </div>
             </div>
           </div>
           {% endfor %}
-          
         </div>
+
       </div>
     </section>
-    <!-- #services -->
-    
 
-    <!--==========================
-    Our Portfolio Section
-  ============================-->
     <section id="portfolio" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>PLN GALERY</h2>
+          <h2>GALERY</h2>
           <p>
             Sed tamen tempor magna labore dolore dolor sint tempor duis magna
             elit veniam aliqua esse amet veniam enim export quid quid veniam
@@ -97,8 +89,8 @@
         <div class="row no-gutters">
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 1</h2>
@@ -110,8 +102,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 2</h2>
@@ -123,8 +115,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 3</h2>
@@ -136,8 +128,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 4</h2>
@@ -149,8 +141,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 5</h2>
@@ -162,8 +154,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 6</h2>
@@ -175,8 +167,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 7</h2>
@@ -188,8 +180,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="{% static 'img/galery/pln06.jpg' %}" class="portfolio-popup">
-                <img src="{% static 'img/galery/pln06.jpg' %}" alt="" />
+              <a href="assets/img/pln06.jpg" class="portfolio-popup">
+                <img src="assets/img/pln06.jpg" alt="" />
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h2 class="wow fadeInUp">GALERY ITEM 8</h2>
@@ -201,162 +193,99 @@
         </div>
       </div>
     </section>
-    <!-- #portfolio -->
 
-    <!--==========================
-    Call To Action Section
-  ============================-->
-    <section id="call-to-action" class="wow fadeInUp">
-      <div class="container">
+    <section id="call-to-action">
+      <div class="container" data-aos="zoom-out">
         <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">SILAHKAN HUBUNGI TIM KAMI</h3>
-            <p class="cta-text">
-              kami telah menyediakan fitur chat real-time silahkan untuk
-              menghubungi dengan klik tombol dibawah ini
-            </p>
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title">Call To Action</h3>
+            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">HUBUNGI</a>
+            <a class="cta-btn align-middle" href="#">Call To Action</a>
           </div>
         </div>
       </div>
     </section>
-    <!-- #call-to-action -->
 
-    <!--==========================
-    Contact Section
-  ============================-->
-    <section id="contact" class="wow fadeInUp">
-      <div class="container">
+    <section id="contact">
+      <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Contact Us</h2>
-          <p>
-            Sed tamen tempor magna labore dolore dolor sint tempor duis magna
-            elit veniam aliqua esse amet veniam enim export quid quid veniam
-            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
-            ipsum velit export irure minim illum fore
-          </p>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim
+            export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export
+            irure minim illum fore</p>
         </div>
 
         <div class="row contact-info">
+
           <div class="col-md-4">
             <div class="contact-address">
-              <i class="ion-ios-location-outline"></i>
+              <i class="bi bi-geo-alt"></i>
               <h3>Address</h3>
-              <address>
-                Jalan Trans Kalimantan KM 75, Desa Buntoi, Kecamatan Kahayan
-                Hilir, Kabupaten Pulang Pisau, Propinsi Kalimantan Tengah,
-                74861, Indonesia
-              </address>
+              <address>A108 Adam Street, NY 535022, USA</address>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="contact-phone">
-              <i class="ion-ios-telephone-outline"></i>
+              <i class="bi bi-phone"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+62888888888</a></p>
+              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="contact-email">
-              <i class="ion-ios-email-outline"></i>
+              <i class="bi bi-envelope"></i>
               <h3>Email</h3>
               <p><a href="mailto:info@example.com">info@example.com</a></p>
             </div>
           </div>
+
         </div>
       </div>
 
       <div class="container mb-4">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7969.958827146013!2d114.20127759357909!3d-2.822140299999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de4809c26c1fa4d%3A0x19afdeccec4715ea!2sPT.%20PLN%20Nusantara%20Power%20Pulang%20Pisau%202x60MW!5e0!3m2!1sid!2sid!4v1692030862753!5m2!1sid!2sid"
-          height="450"
-          style="border: 0; width: 100%"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+          height="450" style="border: 0; width: 100%" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="container">
         <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="{% url 'companyprofile:send_email' %}" method="POST">
-            {% csrf_token %}  
-            <div class="form-row">
+          <form action="#" method="get" role="form" class="php-email-form">
+            <div class="row">
               <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  name="name"
-                  class="form-control"
-                  id="name"
-                  placeholder="Your Name"
-                  data-rule="minlen:4"
-                  data-msg="Please enter at least 4 chars"
-                />
-                <div class="validation"></div>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
-              <div class="form-group col-md-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  id="email"
-                  placeholder="Your Email"
-                  data-rule="email"
-                  data-msg="Please enter a valid email"
-                />
-                <div class="validation"></div>
+              <div class="form-group col-md-6 mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
               </div>
             </div>
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                name="subject"
-                id="subject"
-                placeholder="Subject"
-                data-rule="minlen:4"
-                data-msg="Please enter at least 8 chars of subject"
-              />
-              <div class="validation"></div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
             </div>
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                name="phone"
-                id="subject"
-                placeholder="Phone Number"
-                data-rule="minlen:8"
-                data-msg="Please enter at least 8 chars of subject"
-              />
-              <div class="validation"></div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
             </div>
-            <div class="form-group">
-              <textarea
-                class="form-control"
-                name="message"
-                rows="5"
-                data-rule="required"
-                data-msg="Please write something for us"
-                placeholder="Message"
-              ></textarea>
-              <div class="validation"></div>
+
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message">Error</div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
-            <div class="text-center">
-              <button class="btn btn-primary" type="submit">
-                Send Message
-              </button>
-            </div>
+
+            <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
         </div>
+
       </div>
     </section>
-    <!-- #contact -->
   </main>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 {% endblock content %}
