@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
-from .models import About,Services,Email
+from .models import Services,Email
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.conf import settings
 from intro.models import Intro
-
+from about.models import About
 
 # Create your views here.
 def index(request):

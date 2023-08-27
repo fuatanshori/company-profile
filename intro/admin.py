@@ -1,5 +1,5 @@
 from django.contrib import admin
-from. models import Intro
+from. models import Intro,BackgroundImageIntro
 # Register your models here.
 @admin.register(Intro)
 class IntroAdmin(admin.ModelAdmin):
@@ -25,3 +25,7 @@ class IntroAdmin(admin.ModelAdmin):
                 return self.readonly_fields + ['is_published']
             else:
                 return self.readonly_fields
+
+@admin.register(BackgroundImageIntro)
+class BackgroundImageIntroAdmin(admin.ModelAdmin):
+    pass
