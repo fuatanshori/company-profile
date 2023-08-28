@@ -9,6 +9,8 @@ class GalleryImage(models.Model):
 
     def __str__(self):
         return self.gallery_name
+    
+    
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if self.gallery_image:

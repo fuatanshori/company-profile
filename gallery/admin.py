@@ -1,3 +1,4 @@
+from typing import Any, Optional
 from django.contrib import admin
 from .models import GalleryImage,Gallery
 # Register your models here.
@@ -27,6 +28,10 @@ class GalleryAdmin(admin.ModelAdmin):
             else:
                 return self.readonly_fields
 
+from django.utils.translation import gettext_lazy as gl
 @admin.register(GalleryImage)
 class GalleryImageAdmin(admin.ModelAdmin):
-    pass
+        def get_form(self,request,obj=None,change=False,**kwargs):
+            form = super().get_form(request, obj, change, **kwargs)
+            form.base_fields["gallery_image"].help_text=gl("Rekomendasi Dengan Format 1200 x 900")
+            return form
