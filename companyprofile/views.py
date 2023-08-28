@@ -8,6 +8,7 @@ from about.models import About
 from services.models import Services
 from gallery.models import Gallery
 # Create your views here.
+
 def index(request):
     intro = Intro.objects.get(is_published=True)
     about = About.objects.get(is_published=True)
