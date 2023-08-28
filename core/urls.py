@@ -24,6 +24,7 @@ urlpatterns = [
     path('',include(('companyprofile.urls','companyprofile'))),
     path('',include(('user.urls','user'))),
     path("i18n/", include("django.conf.urls.i18n")),
+    path('news/',include(('news.urls','news')))
 
 ]
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))

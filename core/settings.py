@@ -49,6 +49,7 @@ INSTALLED_APPS+=[
     'about.apps.AboutConfig',
     'services.apps.ServicesConfig',
     'gallery.apps.GalleryConfig',
+    'news'
 ]
 
 AUTH_USER_MODEL ='user.User'
