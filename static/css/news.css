@@ -1,0 +1,38 @@
+
+.carousel-inner img{
+    height:420px;
+} 
+
+
+.carousel-item {
+    position: relative;
+}
+
+
+.carousel-image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 550px; /* Sesuaikan tinggi gradiasi sesuai kebutuhan */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.923)); /* Sesuaikan warna gradiasi sesuai kebutuhan */
+}
+
+.carousel-caption h3,p{
+    text-align: justify;
+}
+@media (max-width: 767px) {
+    .carousel-inner img{
+        height:250px;
+    }
+    .carousel-image::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px; /* Sesuaikan tinggi gradiasi sesuai kebutuhan */
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.923)); /* Sesuaikan warna gradiasi sesuai kebutuhan */
+    }
+}
