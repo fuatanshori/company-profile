@@ -26,7 +26,7 @@
                             </div>
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bolder h2 text-white">{{ crousel.news_title }}</h3>
-                                <p>{{crousel.created_at}}</p>
+                                <p>{{crousel.created_at|date:"M d"}}</p>
                             </div>
                         </div>
                     {% endfor %}
@@ -48,11 +48,11 @@
                     <!-- Blog post-->
                     <div class="card mb-4">
                         
-                        <a href="#!"><img class="card-img-top" src="{{news.news_image.url}}" height="230px" alt="{% static 'assets/img/1.jpg' %}" /></a>
+                        <a href="{% url 'news:news-detail' id=news.id %}"><img class="card-img-top" src="{{news.news_image.url}}" height="230px" alt="{% static 'assets/img/1.jpg' %}" /></a>
                         <div class="card-body">
                             <a href="" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:20}}</h2></a>
                             <div class="small text-muted">{{news.created_at}}</div>
-                            <p class="card-text">{{news.news_description|truncatewords:11}}</p>
+                            <p class="card-text">{{news.news_description|truncatechars:11}}</p>
                             <a class="btn btn-primary" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ from .utils import pagination_news
 def news(request):
     crousel = News.objects.filter(is_publish=True).order_by('-created_at')[:3]
     newss = News.objects.filter(is_publish=True).order_by('-created_at')
-    custom_range,newss, = pagination_news(request,newss,2)
+    custom_range,newss, = pagination_news(request,newss,6)
     context={
         'crousels':crousel,
         'newss':newss,

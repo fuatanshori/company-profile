@@ -4,15 +4,15 @@
     <ul class="pagination justify-content-center my-4">
         {% if queryset.has_previous %}
             <li class="page-item">
-                <a class="page-link" href="?page=1" aria-label="Previous" data-page="{{queryset.previous_page_number}}" >
-                    <span aria-hidden="true">Newer</span>
+                <a class="page-link" href="?page=1" aria-label="Previous">
+                    <span aria-hidden="true">First</span>
 
                 </a>
             </li>
             {% else %}
             <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                    Newer
+                    First
                 </a>
             </li>
         
@@ -22,13 +22,13 @@
         {% for page in custom_range %}
             {% if page == queryset.number %}
             <li class="page-item active ">
-                <a class="page-link" href="?page={{page}}" data-page="{{page}}">
+                <a class="page-link" href="?page={{page}}">
                     {{page}}
                 </a>
             </li>
             {% else %}
             <li class="page-item ">
-                <a class="page-link" href="?page={{page}}" data-page="{{page}}">
+                <a class="page-link" href="?page={{page}}">
                     {{page}}
                 </a>
             </li>
@@ -36,15 +36,15 @@
         {% endfor %}
         {% if queryset.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{queryset.paginator.num_pages}}" aria-label="Previous" data-page="{{queryset.next_page_number}}" >
-                    <span aria-hidden="true">Older</span>
-
+                <a class="page-link" href="?page={{queryset.paginator.num_pages}}" aria-label="Previous" >
+                    <span aria-hidden="true">Last</span>
+ 
                 </a>
             </li>
             {% else %}
             <li class="page-item disabled">
                 <a class="page-link">
-                    <span aria-hidden="true">Older</span>
+                    <span aria-hidden="true">Last</span>
 
                 </a>
             </li>

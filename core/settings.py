@@ -118,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'id'
 
 TIME_ZONE = 'Asia/Jakarta'
 
@@ -262,18 +262,3 @@ JAZZMIN_SETTINGS = {
     "language_chooser": True,
 }
 
-# email
-from decouple import config
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_USE_TLS =True
-EMAIL_HOST_USER='exampleweb12@gmail.com'
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
-SERVER_EMAIL='exampleweb12@gmail.com'
-DEFAULT_FROM_EMAIL='exampleweb12@gmail.com'
-
-# sms
-
-ACCOUNT_SID = config('ACCOUNT_SID')
-AUTH_TOKEN = config('AUTH_TOKEN')

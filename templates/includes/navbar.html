@@ -25,7 +25,7 @@
             <a class="nav-link scrollto" href="{% url 'companyprofile:index' %}#contact">Contact</a>
           </li>
           <li>
-              <a class="nav-link scrollto {% if request.path == '/news/' or request.path == '/news/detail/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
+              <a class="nav-link scrollto {% if request.path == '/news/' or request.path|slice:'0:13' == '/news/detail/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

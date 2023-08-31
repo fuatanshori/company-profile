@@ -3,8 +3,7 @@ from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 
 def pagination_news(request,news,results):
     page = request.GET.get('page')
-    results = results
-    # ! memcah news model dengan jumlah 6 setiap pagenya
+    # ! memcah news model dengan jumlah tertentu setiap pagenya
     paginator = Paginator(news,results)
     try:
         news = paginator.page(page)
