@@ -50,9 +50,9 @@
                         
                         <a href="{% url 'news:news-detail' id=news.id %}"><img class="card-img-top" src="{{news.news_image.url}}" height="230px" alt="{% static 'assets/img/1.jpg' %}" /></a>
                         <div class="card-body">
-                            <a href="" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:20}}</h2></a>
+                            <a href="" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:40}}</h2></a>
                             <div class="small text-muted">{{news.created_at}}</div>
-                            <p class="card-text">{{news.news_description|truncatechars:11}}</p>
+                            <p class="card-text">{{news.news_description|truncatechars:150}}</p>
                             <a class="btn btn-primary" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
                         </div>
                     </div>
