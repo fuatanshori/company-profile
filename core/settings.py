@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
 # apps
 INSTALLED_APPS+=[
-    'companyprofile.apps.CompanyprofileConfig',
+    'plnnusantarapower.apps.PlnNusantaraPowerConfig',
     'user.apps.UserConfig',
     'dashboard.apps.DashboardConfig',
     'intro.apps.IntroConfig',

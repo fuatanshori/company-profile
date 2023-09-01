@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('',include(('companyprofile.urls','companyprofile'))),
+    path('',include(('plnnusantarapower.urls','plnnusantarapower'))),
     path('',include(('user.urls','user'))),
     path("i18n/", include("django.conf.urls.i18n")),
     path('news/',include(('news.urls','news')))
