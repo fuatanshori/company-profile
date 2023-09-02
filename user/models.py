@@ -19,8 +19,8 @@ class User(AbstractBaseUser,PermissionsMixin):
     is_active = models.BooleanField(default=True)
     
     objects         = CustomBaseUser()
-    USERNAME_FIELD  = 'email'
-    REQUIRED_FIELDS = ['username']
+    USERNAME_FIELD  = 'username'
+    REQUIRED_FIELDS = ['email','name']
 
     def __str__(self):
         return self.email

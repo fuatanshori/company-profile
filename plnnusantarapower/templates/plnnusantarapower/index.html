@@ -73,7 +73,7 @@
     </section>
 
     <section id="gallery" class="wow fadeInUp">
-      <div class="container">
+      <div class="container container-desc">
         <div class="section-header">
           <h2>{{gallery_title}}</h2>
           <p>
@@ -82,7 +82,7 @@
         </div>
       </div>
 
-      <div class="container-fluid">
+      <div class="container-fluid container-galery">
         <div class="row no-gutters">
           {% for gallery_image in gallery_images %}
           <div class="col-lg-3 col-md-4">
@@ -122,44 +122,60 @@
     <section id="contact">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Contact Us</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim
-            export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export
-            irure minim illum fore</p>
+          <h2>{{contact_title}}</h2>
+          <p>{{contact_description}}</p>
         </div>
 
         <div class="row contact-info">
-
+          {% if contact_phone_number == None %}
+          <div class="col-md-6">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <div class="col-lg-7 mx-auto">
+                <address>{{contact_address}}</address>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to={{contact_email}}">{{contact_email}}</a></p>
+            </div>
+          </div>
+          {% else %}
           <div class="col-md-4">
             <div class="contact-address">
               <i class="bi bi-geo-alt"></i>
               <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
+              <address>{{contact_address}}</address>
             </div>
           </div>
-
+          
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="bi bi-phone"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+              <p><a href="tel:{{contact_phone_number}}">{{contact_phone_number}}</a></p>
             </div>
           </div>
-
+          
           <div class="col-md-4">
             <div class="contact-email">
               <i class="bi bi-envelope"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
+              <p><a href="mailto:{{contact_email}}">{{contact_email}}</a></p>
             </div>
           </div>
-
+          {% endif %}
         </div>
       </div>
 
       <div class="container mb-4">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7969.958827146013!2d114.20127759357909!3d-2.822140299999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de4809c26c1fa4d%3A0x19afdeccec4715ea!2sPT.%20PLN%20Nusantara%20Power%20Pulang%20Pisau%202x60MW!5e0!3m2!1sid!2sid!4v1692030862753!5m2!1sid!2sid"
+          src="{{contact_maps}}"
           height="450" style="border: 0; width: 100%" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>

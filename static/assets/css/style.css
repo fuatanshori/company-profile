@@ -774,11 +774,17 @@ section {
 /* Our gallery Section
 --------------------------------*/
 
-#gallery {
+#gallery .container-galery{
   background: #fff;
   padding: 30px;
   padding-left: 70px;
   padding-right: 70px;
+}
+#gallery .container-desc{
+  background: #fff;
+  padding-left: 30px;
+  padding-right: 30px;
+
 }
 
 
@@ -837,9 +843,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#gallery p{
-text-align:justify;
-}
+
 
 
 /* Call To Action Section

@@ -1,7 +1,6 @@
 from django.db.models.signals import post_save,post_delete,pre_save
 from django.dispatch import receiver
 from .models import Gallery,GalleryImage
-from PIL import Image
 @receiver(post_save, sender=Gallery)
 def single_published_gallery(sender, instance, **kwargs):
     

@@ -49,7 +49,8 @@ INSTALLED_APPS+=[
     'about.apps.AboutConfig',
     'services.apps.ServicesConfig',
     'gallery.apps.GalleryConfig',
-    'news'
+    'news',
+    'contact'
 ]
 
 AUTH_USER_MODEL ='user.User'
@@ -96,6 +97,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'plnnusantarapower',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
