@@ -1,6 +1,5 @@
 from django.db import models
 from uuid import uuid4
-from django.core.exceptions import PermissionDenied
 
 # Create your models here.
 class News(models.Model):
@@ -17,4 +16,4 @@ class News(models.Model):
 
     def __str__(self) -> str:
         return self.news_title
-  
+

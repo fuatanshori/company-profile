@@ -7,20 +7,27 @@
             <!-- Post content-->
             <article>
                 <!-- Post header-->
-                <header class="mb-4">
+                <header class="">
                     <!-- Post title-->
-                    <h1 class="fw-bolder mb-1">{{news.news_title}}</h1>
+                    <h1 class="fw-bolder mb-3">{{news.news_title}}</h1>
                     <!-- Post meta content-->
-                    <div class="text-muted fst-italic mb-2">Posted on {{news.created_at}} by {{news.author}}</div>
+                    <div class="text-muted fst-italic ">Posted on {{news.created_at}} by {{news.author}}</div>
                     <!-- Post categories-->
                     
                 </header>
                 <!-- Preview image figure-->
-                <figure class="mb-4"><img class="img-fluid rounded" src="{{news.news_image.url}}"/></figure>
+                {% if not news.news_image %}
                 <!-- Post content-->
                 <section class="mb-5">
                     <p class="fs-5 mb-4">{{news.news_description}}</p>
                 </section>
+                {% else %}
+                <figure class="mb-4"><img class="img-fluid rounded" src="{{ news.news_image.url }}"/></figure>
+                <!-- Post content-->
+                <section class="mb-5">
+                    <p class="fs-5 mb-4">{{news.news_description}}</p>
+                </section>
+                {% endif %}
             </article>
         </div>
         </div>

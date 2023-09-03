@@ -3,7 +3,6 @@
     <div class="container d-flex justify-content-between">
 
       <div id="logo">
-
         <a href=""><img src="{% static 'assets/img/pln03.png' %}" alt=""></a>
       </div>
 
@@ -22,11 +21,16 @@
             <a class="nav-link scrollto " href="{% url 'plnnusantarapower:index' %}#gallery">Galery</a>
           </li>
           <li>
-            <a class="nav-link scrollto" href="{% url 'plnnusantarapower:index' %}#contact">Contact</a>
+            {% if request.path == "/" %}
+            <a class="nav-link scrollto " href="{% url 'plnnusantarapower:index' %} #news">News</a>
+            {% else %}
+            <a class="nav-link scrollto {% if request.path == '/news/' or request.path|slice:'0:13' == '/news/detail/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
+            {% endif %}
           </li>
           <li>
-              <a class="nav-link scrollto {% if request.path == '/news/' or request.path|slice:'0:13' == '/news/detail/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
+            <a class="nav-link scrollto" href="{% url 'plnnusantarapower:index' %}#contact">Contact</a>
           </li>
+          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
