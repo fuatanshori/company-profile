@@ -7,6 +7,6 @@ class NewsAdmin(admin.ModelAdmin):
     ordering=['-created_at']
     readonly_fields=['created_at']
     def get_readonly_fields(self, request, obj=None):
-        if not request.user.is_superuser:
-            return self.readonly_fields + ['is_published']
+        if not request.user.role == "admin":
+            return self.readonly_fields + ['is_active']
         return self.readonly_fields

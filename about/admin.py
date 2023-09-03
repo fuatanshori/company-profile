@@ -4,7 +4,7 @@ from .models import About
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
-    list_display=['title','is_published','created_at']
+    list_display=['title','is_active','created_at']
     min_objects = 1
     actions = None
     search_fields=['title']
@@ -23,6 +23,6 @@ class AboutAdmin(admin.ModelAdmin):
         else:
             queryset = self.model.objects.all()
             if queryset.count() <= self.min_objects:
-                return self.readonly_fields + ['is_published']
+                return self.readonly_fields + ['is_active']
             else:
                 return self.readonly_fields

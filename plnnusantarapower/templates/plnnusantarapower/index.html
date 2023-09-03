@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block topbar %}
+{% include 'includes/topbar.html' with topbar_email=topbar_email topbar_phone_number=topbar_phone_number topbar_socials=topbar_socials %}
+{% endblock topbar %}
+
 {% block content %}
   <section id="home">
     <div class="hero-content" data-aos="fade-up">

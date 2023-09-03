@@ -8,7 +8,7 @@ class AdminMenuServices(admin.ModelAdmin):
 
 @admin.register(Services)
 class AdminServices(admin.ModelAdmin):
-    list_display=['title','is_published','created_at']
+    list_display=['title','is_active','created_at']
     readonly_fields=['created_at']
     min_objects = 1
     actions = None
@@ -25,6 +25,6 @@ class AdminServices(admin.ModelAdmin):
         else:
             queryset = self.model.objects.all()
             if queryset.count() <= self.min_objects:
-                return self.readonly_fields + ['is_published']
+                return self.readonly_fields + ['is_active']
             else:
                 return self.readonly_fields

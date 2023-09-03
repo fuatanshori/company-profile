@@ -15,7 +15,7 @@ class BackgroundImageIntro(models.Model):
 class Intro(models.Model):
     title               = models.CharField(max_length=20)
     description         = models.TextField(max_length=655)
-    is_published        = models.BooleanField(default=False)
+    is_active        = models.BooleanField(default=False)
     image               = models.ManyToManyField(BackgroundImageIntro,blank=True)
     created_at          = models.DateTimeField(auto_now_add=True,editable=False)
 

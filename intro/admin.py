@@ -4,7 +4,7 @@ from. models import Intro,BackgroundImageIntro
 
 @admin.register(Intro)
 class IntroAdmin(admin.ModelAdmin):
-    list_display=['title','is_published','created_at']
+    list_display=['title','is_active','created_at']
     min_objects = 1
     actions = None
     search_fields=['title']
@@ -24,7 +24,7 @@ class IntroAdmin(admin.ModelAdmin):
         else:
             queryset = self.model.objects.all()
             if queryset.count() <= self.min_objects:
-                return self.readonly_fields + ['is_published']
+                return self.readonly_fields + ['is_active']
             else:
                 return self.readonly_fields
 

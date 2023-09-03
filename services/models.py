@@ -16,7 +16,7 @@ class Services(models.Model):
     title           = models.CharField(max_length=20)
     description     = models.TextField(max_length=400)
     menu_services   = models.ManyToManyField(MenuServices)
-    is_published    = models.BooleanField(default=False)
+    is_active    = models.BooleanField(default=False)
     created_at      = models.DateTimeField(auto_now_add=True,editable=False)
 
     class Meta:

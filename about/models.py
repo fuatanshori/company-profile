@@ -7,7 +7,7 @@ class About(models.Model):
     visi            = models.TextField()
     misi            = models.TextField()
     image           = models.ImageField(upload_to='media/about')
-    is_published    = models.BooleanField(default=False)
+    is_active    = models.BooleanField(default=False)
     created_at      = models.DateTimeField(auto_now_add=True,null=True,blank=True,editable=False)
     
     class Meta:

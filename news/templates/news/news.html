@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="{% static 'css/news.css' %}">
 {% endblock styles %}
 
+{% block topbar %}
+{% include 'includes/topbar.html' with topbar_email=topbar_email topbar_phone_number=topbar_phone_number topbar_socials=topbar_socials %}
+{% endblock topbar %}
+
 {% block content %}
  <!-- Page content-->
  <div class="container py-3">

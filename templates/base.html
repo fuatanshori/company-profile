@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    {% include 'includes/topbar.html' %}
+    {% block topbar %}{% endblock topbar %}
     {% include 'includes/navbar.html' %}
     {% block content %}{% endblock content %}
     {% include 'includes/footer.html' %}

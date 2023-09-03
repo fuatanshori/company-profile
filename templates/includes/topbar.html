@@ -1,13 +1,19 @@
- <section id="topbar" class="d-flex align-items-center">
+{% load static %}
+<section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a
-            href="mailto:contact@example.com">contact@example.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        <i class="bi bi-envelope "><a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to={{topbar_email}}">{{topbar_email}}</a></i>
+          {% if topbar_phone_number %}
+          <i class="bi bi-phone ms-5"><span>{{topbar_phone_number}}</span></i>
+          {% else %}
+  
+          {% endif %}
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="" class=""><i class="bi bi-facebook"></i></a>
-        <a href="" class=""><i class="bi bi-instagram"></i></a>
+        {% for topbar_social in topbar_socials %}
+        <a href="{{topbar_social.link}}"><i class="{{topbar_social.icon_name}}"></i></a>
+        {% endfor %}
       </div>
     </div>
   </section>

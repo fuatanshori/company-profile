@@ -23,7 +23,7 @@ class Gallery(models.Model):
     title           = models.CharField(max_length=30)
     description     = models.TextField()
     image           = models.ManyToManyField(GalleryImage)
-    is_published    = models.BooleanField(default=False)
+    is_active       = models.BooleanField(default=False)
     created_at      = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.title

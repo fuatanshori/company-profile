@@ -3,7 +3,7 @@ from .models import Contact
 # Register your models here.
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display=['title','is_published','created_at']
+    list_display=['title','is_active','created_at']
     min_objects = 1
     actions = None
     readonly_fields=['created_at']
@@ -22,6 +22,6 @@ class ContactAdmin(admin.ModelAdmin):
         else:
             queryset = self.model.objects.all()
             if queryset.count() <= self.min_objects:
-                return self.readonly_fields + ['is_published']
+                return self.readonly_fields + ['is_active']
             else:
                 return self.readonly_fields

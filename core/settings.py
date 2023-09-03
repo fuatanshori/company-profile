@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+from decouple import config
+from django.utils.translation import gettext_lazy as _
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,15 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#8&5_x5e767500e0y+e)_4oevs$61@$m7li1ynzti8ixy=2*=^'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False 
 
 ALLOWED_HOSTS = ['*']
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -49,8 +50,9 @@ INSTALLED_APPS+=[
     'about.apps.AboutConfig',
     'services.apps.ServicesConfig',
     'gallery.apps.GalleryConfig',
-    'news',
-    'contact'
+    'news.apps.NewsConfig',
+    'contact.apps.ContactConfig',
+    'topbar.apps.TopbarConfig',
 ]
 
 AUTH_USER_MODEL ='user.User'
@@ -64,7 +66,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    
 ]
+
 
 ROOT_URLCONF = 'core.urls'
 
@@ -79,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'topbar.context_processors.topbarutils'
             ],
         },
     },
@@ -130,6 +135,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 LANGUAGE_CODE = 'id'
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('id', _('Indonesian')),
+    # Add other languages as needed
+]
+
+LOCALE_PATHS = [
+    BASE_DIR/'locale'
+]
 
 TIME_ZONE = 'Asia/Jakarta'
 
