@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block styles %}
+
+{% endblock styles %}
+
 {% block topbar %}
 {% include 'includes/topbar.html' with topbar_email=topbar_email topbar_phone_number=topbar_phone_number topbar_socials=topbar_socials %}
 {% endblock topbar %}
@@ -9,32 +13,30 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-lg-12">
-            <!-- Post content-->
+            <!-- Post content -->
             <article>
-                <!-- Post header-->
+                <!-- Post header -->
                 <header class="">
-                    <!-- Post title-->
-                    <h1 class="fw-bolder mb-3">{{news.news_title}}</h1>
-                    <!-- Post meta content-->
-                    <div class="text-muted fst-italic ">Posted on {{news.created_at}} by {{news.author}}</div>
-                    <!-- Post categories-->
-                    
+                    <!-- Post title -->
+                    <h1 class="fw-bolder mb-3">{{ news.news_title }}</h1>
+                    <!-- Post meta content -->
+                    <div class="text-muted fst-italic my-3">Posted on {{ news.created_at|date:"d F y" }} by {{ news.author }}</div>
+                    <!-- Post categories -->
                 </header>
-                <!-- Preview image figure-->
+                <!-- Preview image figure -->
                 {% if not news.news_image %}
-                <!-- Post content-->
-                <section class="mb-5">
-                    <p class="fs-5 mb-4">{{news.news_description}}</p>
-                </section>
+                    <!-- No Image Content -->
+                    <section class="mb-5">
+                        <p class="fs-5 mb-4">{{ news.news_description|linebreaksbr}}</p>
+                    </section>
                 {% else %}
-                <figure class="mb-4"><img class="img-fluid rounded" src="{{ news.news_image.url }}"/></figure>
-                <!-- Post content-->
-                <section class="mb-5">
-                    <p class="fs-5 mb-4">{{news.news_description}}</p>
-                </section>
+                    <figure class="mb-4"><img class="img-fluid rounded img-detail-news" src="{{ news.news_image.url }}" alt="{{ news.news_title }}"/></figure>
+                    <!-- Post content -->
+                    <section class="mb-5">
+                        <p class="fs-5 mb-4">{{ news.news_description|linebreaksbr}}</p>
+                    </section>
                 {% endif %}
             </article>
-        </div>
         </div>
     </div>
 </div>

@@ -17,20 +17,21 @@
         <div class="col-lg-11 mx-auto">
             <div id="carouselExampleCaptions" class="carousel slide mb-4">
                 <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <div class="carousel-indicators">
+                        {% for  crousel in crousels %}
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{forloop.counter0}}" class="{% if forloop.first %}active {% else %} {% endif %}"  aria-label="Slide {{forloop.counter}}"></button>
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="carousel-inner">
                     {% for  crousel in crousels %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                            
                             <div class="carousel-image">
-                                <img src=" {% if crousel.news_image %} {{ crousel.news_image.url }} {% else %}{% endif %}" class="d-block w-100" >
+                                <img he src=" {% if crousel.news_image %} {{ crousel.news_image.url }} {% else %}{% endif %}" class="d-block w-100" style="max-height: 300px;" >
                             </div>
                             <div class="carousel-caption d-none d-md-block">
-                                <h3 class="fw-bolder h2 text-white">{{ crousel.news_title }}</h3>
-                                <p>{{crousel.created_at|date:"M d"}}</p>
+                                <h3 class="fw-bolder h4 text-white">{{ crousel.news_title }}</h3>
+                                <p>{{crousel.created_at|date:"F y"}}</p>
                             </div>
                         </div>
                     {% endfor %}
@@ -48,21 +49,26 @@
             <!-- Nested row for non-featured blog posts-->
             <div class="row">
                 {% for news in newss %}
-                <div class="col-lg-4">
+                <div class="col-sm-4">
                     <!-- Blog post-->
-                    <div class="card mb-4">
+                    <div class="card custom-card mb-4">
                         {% if news.news_image %} 
-                        <a href="{% url 'news:news-detail' id=news.id %}"><img class="card-img-top" src="{{ news.news_image.url }}" height="230px" /></a>
-                        {% else %}
-                        <a href="{% url 'news:news-detail' id=news.id %}"><img class="card-img-top"  height="230px" /></a>
-                        
-                        {% endif %}
+                        <a href="{% url 'news:news-detail' id=news.id %}"><img class="card-img-top" src="{{ news.news_image.url }}" height="170px" /></a>
                         <div class="card-body">
                             <a href="{% url 'news:news-detail' id=news.id %}" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2></a>
-                            <div class="small text-muted">{{news.created_at}}</div>
-                            <p class="card-text">{{news.news_description|truncatechars:150}}</p>
+                            <div class="small text-muted my-2">{{news.created_at}}</div>
+                            <p class="card-text">{{news.news_description|truncatechars:140}}</p>
                             <a class="btn btn-primary" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
                         </div>
+                        {% else %}
+                        <div class="card-body">
+                            <a href="{% url 'news:news-detail' id=news.id %}" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2></a>
+                            <div class="small text-muted my-2">{{news.created_at}}</div>
+                            <p class="card-text">{{news.news_description|truncatechars:350}} 
+                            </p>
+                            <a class="btn btn-primary" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}

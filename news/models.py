@@ -7,13 +7,13 @@ class News(models.Model):
     news_title          = models.CharField(max_length=100)
     author              = models.CharField(max_length=55)
     news_description    = models.TextField()
-    news_image          = models.ImageField(upload_to='media/news',blank=True,null=True,default='media/news/Logo_PLN.png')
+    news_image          = models.ImageField(upload_to='media/news',blank=True,null=True,)
     is_publish          = models.BooleanField(default=False)
     created_at          = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = 'News'
-
+        permissions = [("can_publish", "Can Publish")]
     def __str__(self) -> str:
         return self.news_title
 

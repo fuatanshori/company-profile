@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True 
 
 ALLOWED_HOSTS = ['*']
 
@@ -226,7 +226,7 @@ JAZZMIN_SETTINGS = {
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
-        {"model": "auth.user"}
+        {"model": "user.User"}
     ],
 
     #############
@@ -248,8 +248,31 @@ JAZZMIN_SETTINGS = {
     # for the full list of 5.13.0 free icon classes
     "icons": {
         "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
+        "user.User": "fas fa-user",
+        
         "auth.Group": "fas fa-users",
+        "auth.Permission":"fa fa-key",
+        
+        "about.About":"fa fa-info-circle",
+        
+        "contact.Contact":"fa fa-address-book",
+        
+        "gallery.GalleryImage":"fa fa-image",
+        "gallery.Gallery":"fa fa-th",
+        
+        "intro.Intro":"fa fa-quote-left",
+        "intro.BackgroundImageIntro":"fa fa-image",
+        
+        "news.News":"fa fa-list-alt",
+        
+        "services.MenuServices":"fa fa-th",
+        "services.Services":"fa fa-cogs",
+        
+        "topbar.TopBar":"fa fa-bars",
+        "topbar.Social":"fa fa-comments",
+        
+        "user.User":"fa fa-user",
+
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",

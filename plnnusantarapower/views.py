@@ -5,7 +5,6 @@ from services.models import Services
 from gallery.models import Gallery
 from contact.models import Contact
 from contact.maps import maps_location
-from topbar.models import TopBar
 from .utils import get_data_or_none
 
 
