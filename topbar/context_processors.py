@@ -1,7 +1,7 @@
 from .models import TopBar
 from plnnusantarapower.utils import get_data_or_none
 
-def topbarutils(request):
+def topbar(request):
     topbar      = get_data_or_none(TopBar)
     context = {
         'topbar_email':topbar.email if topbar else None,
