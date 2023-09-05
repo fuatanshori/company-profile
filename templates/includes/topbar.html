@@ -5,14 +5,14 @@
         <i class="bi bi-envelope "><a
             href="https://mail.google.com/mail/?view=cm&fs=1&to={{topbar_email}}">{{topbar_email}}</a></i>
           {% if topbar_phone_number %}
-          <i class="bi bi-phone ms-5"><span>{{topbar_phone_number}}</span></i>
+          <i class="bi bi-phone ms-5 d-flex align-items-center"><span>{{topbar_phone_number}}</span></i>
           {% else %}
   
           {% endif %}
       </div>
-      <div class="social-links d-none d-md-flex align-items-center">
+      <div class="social-links ">
         {% for topbar_social in topbar_socials %}
-        <a href="{{topbar_social.link}}"><i class="{{topbar_social.icon_name}}"></i></a>
+        <a href="{{topbar_social.link}}"><i class="{{topbar_social.icon_name}} "></i></a>
         {% endfor %}
       </div>
     </div>

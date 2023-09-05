@@ -36,14 +36,14 @@
             <img src="{{about_image.url}}" class="img-control"  alt="">
           </div>
           
-          <div class="col-lg-7 content text-justify d-flex justify-content-center align-items-center">
-            <div class="p">
+          <div class="col-lg-7 content d-flex justify-content-center align-items-center">
+            <div class="paragraf">
               <h2 class="text-center">{{about_title}}</h2>
-              <p>{{about_description}}</p>
+              <p>{{about_description|linebreaksbr}}</p>
               <h3 class="text-center">VISI</h3>
-              <p>{{about_visi}}</p>
+              <p class="text-center">{{about_visi|linebreaksbr}}</p>
               <h3 class="text-center">MISI</h3>
-              <p>{{about_misi}}</p>
+              <p>{{about_misi|linebreaksbr}}</p>
             </div>
           </div>
         </div>
@@ -130,22 +130,49 @@
         </div>
 
         <div class="row contact-info">
-          {% if contact_phone_number == None %}
-          <div class="col-md-6">
+          {% if contact_phone_number is None and contact_email is not None %}
+            <div class="col-md-6">
+                <div class="contact-address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <div class="col-lg-7 mx-auto">
+                    <address>{{contact_address}}</address>
+                  </div>
+                </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="contact-email">
+                <i class="bi bi-envelope"></i>
+                <h3>Email</h3>
+                <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to={{contact_email}}">{{contact_email}}</a></p>
+              </div>
+            </div>
+          {% elif contact_email is None and contact_phone_number is not None %}
+            <div class="col-md-6">
+              <div class="contact-address">
+                <i class="bi bi-geo-alt"></i>
+                <h3>Address</h3>
+                <div class="col-lg-7 mx-auto">
+                  <address>{{contact_address}}</address>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="contact-email">
+                <i class="bi bi-phone"></i>
+                <h3>Phone Number</h3>
+                <p><a href="tel:{{contact_phone_number}}">{{contact_phone_number}}</a></p>
+              </div>
+            </div>
+          {% elif contact_email is None and contact_phone_number is None %}
+          <div class="col-md-12">
             <div class="contact-address">
               <i class="bi bi-geo-alt"></i>
               <h3>Address</h3>
               <div class="col-lg-7 mx-auto">
                 <address>{{contact_address}}</address>
               </div>
-            </div>
-          </div>
-          
-          <div class="col-md-6">
-            <div class="contact-email">
-              <i class="bi bi-envelope"></i>
-              <h3>Email</h3>
-              <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to={{contact_email}}">{{contact_email}}</a></p>
             </div>
           </div>
           {% else %}

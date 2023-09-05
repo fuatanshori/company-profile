@@ -14,7 +14,7 @@ def index(request):
     services    = get_data_or_none(Services)
     gallery     = get_data_or_none(Gallery)
     contact     = get_data_or_none(Contact)
-
+    print(request.path)
 
     context = {
         'intro_title': intro.title if intro else 'PLN Nusantara Power',

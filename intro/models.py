@@ -4,7 +4,7 @@ from intro.validatiors  import validate_aspect_ratio_1920_900
 
 class BackgroundImageIntro(models.Model):
     bg_image_name   = models.CharField(max_length=30)
-    bg_image        = models.ImageField(upload_to='media/intro',validators=[validate_aspect_ratio_1920_900])
+    bg_image        = models.ImageField(upload_to='media/intro')
     created_at      = models.DateTimeField(auto_now_add=True)
     class Meta:
         verbose_name_plural='Background Image Intro'
@@ -15,7 +15,7 @@ class BackgroundImageIntro(models.Model):
 class Intro(models.Model):
     title               = models.CharField(max_length=20)
     description         = models.TextField(max_length=655)
-    is_active        = models.BooleanField(default=False)
+    is_active           = models.BooleanField(default=False)
     image               = models.ManyToManyField(BackgroundImageIntro,blank=True)
     created_at          = models.DateTimeField(auto_now_add=True,editable=False)
 

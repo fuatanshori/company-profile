@@ -66,7 +66,10 @@
                             <div class="small text-muted my-2">{{news.created_at}}</div>
                             <p class="card-text">{{news.news_description|truncatechars:350}} 
                             </p>
+                        </div>
+                        <div class="card-body">
                             <a class="btn btn-primary" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
+
                         </div>
                         {% endif %}
                     </div>

@@ -20,20 +20,20 @@
                     <!-- Post title -->
                     <h1 class="fw-bolder mb-3">{{ news.news_title }}</h1>
                     <!-- Post meta content -->
-                    <div class="text-muted fst-italic my-3">Posted on {{ news.created_at|date:"d F y" }} by {{ news.author }}</div>
+                    <div class="text-muted fst-italic my-3">Posted on {{ news.created_at|date:"d F Y" }} by {{ news.author }}</div>
                     <!-- Post categories -->
                 </header>
                 <!-- Preview image figure -->
                 {% if not news.news_image %}
                     <!-- No Image Content -->
                     <section class="mb-5">
-                        <p class="fs-5 mb-4">{{ news.news_description|linebreaksbr}}</p>
+                        <p class="fs-6 mb-4">{{ news.news_description|linebreaksbr}}</p>
                     </section>
                 {% else %}
                     <figure class="mb-4"><img class="img-fluid rounded img-detail-news" src="{{ news.news_image.url }}" alt="{{ news.news_title }}"/></figure>
                     <!-- Post content -->
                     <section class="mb-5">
-                        <p class="fs-5 mb-4">{{ news.news_description|linebreaksbr}}</p>
+                        <p class="fs-6 mb-4">{{ news.news_description|linebreaksbr}}</p>
                     </section>
                 {% endif %}
             </article>
