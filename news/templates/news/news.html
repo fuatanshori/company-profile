@@ -27,7 +27,7 @@
                     {% for  crousel in crousels %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
                             <div class="carousel-image">
-                                <img  src=" {% if crousel.news_image %} {{ crousel.news_image.url }} {% else %}{% endif %}" class="d-block w-100" style="max-height: 300px;" >
+                                <img  src=" {% if crousel.news_image %} {{ crousel.news_image.url }} {% else %}{% endif %}" class="d-block w-100" style="max-height: 380px;" >
                             </div>
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bolder h4 text-white">{{ crousel.news_title }}</h3>
@@ -52,54 +52,50 @@
                 <div class="col-sm-4">
                     <!-- Blog post-->
                     <div class="card custom-card mb-4">
-                        {% if news.news_image %} 
-                            {% if request.path == '/news/' %}
-                                <a href="{% url 'news:news-detail' id=news.id %}"><img class="card-img-top" src="{{ news.news_image.url }}" height="170px" /></a>
-                            {% else %}
-                                <a href="{% url 'news:news-detail-admin-preview' id=news.id %}"><img class="card-img-top" src="{{ news.news_image.url }}" height="170px" /></a>
+                        <div class="card-body" style="display: flex; flex-direction: column;">
+                            {% if news.news_image %}
+                                <!-- Image -->
+                                {% if request.path == '/news/' %}
+                                    <a href="{% url 'news:news-detail' id=news.id %}">
+                                        <img class="card-img-top" src="{{ news.news_image.url }}" height="170px" />
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'news:news-detail-admin-preview' id=news.id %}">
+                                        <img class="card-img-top" src="{{ news.news_image.url }}" height="170px" />
+                                    </a>
+                                {% endif %}
                             {% endif %}
-                        <div class="card-body">
+            
+                            <!-- Title -->
                             {% if request.path == '/news/' %}
-                                <a href="{% url 'news:news-detail' id=news.id %}" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2></a>
+                                <a href="{% url 'news:news-detail' id=news.id %}" class="nav-link text-primary ">
+                                    <h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2>
+                                </a>
                             {% else %}
-                                <a href="{% url 'news:news-detail-admin-preview' id=news.id %}" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2></a>
+                                <a href="{% url 'news:news-detail-admin-preview' id=news.id %}" class="nav-link text-primary ">
+                                    <h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2>
+                                </a>
                             {% endif %}
+            
+                            <!-- Date -->
                             <div class="small text-muted my-2">{{news.created_at}}</div>
-                            <p class="card-text">{{news.news_description|truncatechars:140}}</p>
+            
+                            <!-- Description -->
+                            <p class="card-text" style="flex-grow: 1;">{{news.news_description|truncatechars:140}}</p>
+            
+                            <!-- Read More -->
                             {% if request.path == '/news/' %}
-                                <a class="btn btn-primary" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
+                                <a class="btn btn-primary mt-auto" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
                             {% else %}
-                                <a class="btn btn-primary" href="{% url 'news:news-detail-admin-preview' id=news.id %}">Read more →</a>
+                            <a class="btn btn-primary mt-auto" href="{% url 'news:news-detail-admin-preview' id=news.id %}">Read more →</a>
                             {% endif %}
                         </div>
-                        {% else %}
-                        <div class="card-body">
-                            {% if request.path == '/news/' %}
-                                <a href="{% url 'news:news-detail' id=news.id %}" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2></a>
-                            {% else %}
-                                <a href="{% url 'news:news-detail-admin-preview' id=news.id %}" class="nav-link text-primary "><h2 class="card-title fw-semibold my-1 h4">{{news.news_title|truncatechars:30}}</h2></a>
-                            {% endif %}
-                            <div class="small text-muted my-2">{{news.created_at}}</div>
-                            <p class="card-text">{{news.news_description|truncatechars:350}} 
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            {% if request.path == '/news/' %}
-                                <a class="btn btn-primary" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
-                            {% else %}
-                                <a class="btn btn-primary" href="{% url 'news:news-detail-admin-preview' id=news.id %}">Read more →</a>
-                            {% endif %}
-                        </div>
-                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
             </div>
-            
             {% include 'includes/pagination.html' with queryset=newss custom_range=custom_range %}
-
         </div>
-
     </div>
 </div>
 {% endblock content %}
