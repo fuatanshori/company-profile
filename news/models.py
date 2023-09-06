@@ -13,7 +13,7 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = 'News'
-        permissions = [("can_publish", "Can Publish")]
+        permissions = [("can_publish_news", "Can Publish News"),("can_preview_news", "Can Preview News")]
     def __str__(self) -> str:
         return self.news_title
 

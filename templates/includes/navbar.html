@@ -23,7 +23,7 @@
             {% if request.path == "/" %}
             <a class="nav-link scrollto " href="{% url 'plnnusantarapower:index' %} #news">News</a>
             {% else %}
-            <a class="nav-link scrollto {% if request.path == '/news/' or request.path|slice:'0:13' == '/news/detail/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
+            <a class="nav-link scrollto {% if request.path == '/news/' or request.path|slice:'0:18' == '/news/news-detail/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
             {% endif %}
           </li>
           <li>
