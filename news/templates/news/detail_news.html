@@ -37,7 +37,19 @@
                     </section>
                 {% endif %}
             </article>
-            <div><a class="btn btn-outline-primary rounded-pill mb-4 px-4" href="{% url 'news:news' %}"> <i class="bi bi-arrow-left-circle"></i> Kembali</a></div>
+            <div>
+                {% if request.path|slice:'0:18' == '/news/news-detail/' %}
+                <a class="btn btn-outline-primary rounded-pill mb-4 px-4" href="{% url 'news:news' %}"> 
+                    <i class="bi bi-arrow-left-circle">
+                    </i> Kembali
+                </a>
+                {% else %}
+                <a class="btn btn-outline-primary rounded-pill mb-4 px-4" href="{% url 'news:news-admin-preview' %}"> 
+                    <i class="bi bi-arrow-left-circle">
+                    </i> Kembali
+                </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

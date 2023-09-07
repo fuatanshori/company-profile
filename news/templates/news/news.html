@@ -57,11 +57,11 @@
                                 <!-- Image -->
                                 {% if request.path == '/news/' %}
                                     <a href="{% url 'news:news-detail' id=news.id %}">
-                                        <img class="card-img-top" src="{{ news.news_image.url }}" height="170px" />
+                                        <img class="card-img-top" src="{{ news.news_image.url }}" height="180px" />
                                     </a>
                                 {% else %}
                                     <a href="{% url 'news:news-detail-admin-preview' id=news.id %}">
-                                        <img class="card-img-top" src="{{ news.news_image.url }}" height="170px" />
+                                        <img class="card-img-top" src="{{ news.news_image.url }}" height="180px" />
                                     </a>
                                 {% endif %}
                             
@@ -85,9 +85,9 @@
                 
                                 <!-- Read More -->
                                 {% if request.path == '/news/' %}
-                                    <a class="btn btn-primary mt-auto" href="{% url 'news:news-detail' id=news.id %}">Read more →</a>
+                                    <a class="btn btn-primary rounded-pill mt-auto" href="{% url 'news:news-detail' id=news.id %}"><i class="bi bi-book m-2"></i>Read More</a>
                                 {% else %}
-                                <a class="btn btn-primary mt-auto" href="{% url 'news:news-detail-admin-preview' id=news.id %}">Read more →</a>
+                                <a class="btn btn-primary rounded-pill mt-auto" href="{% url 'news:news-detail-admin-preview' id=news.id %}"><i class="bi bi-book m-2"></i>Read More</a>
                                 {% endif %}
                             {% else %}
                                 <!-- Title -->
@@ -109,9 +109,9 @@
                 
                                 <!-- Read More -->
                                 {% if request.path == '/news/' %}
-                                    <a class="btn btn-primary mt-auto "  href="{% url 'news:news-detail' id=news.id %}"><i class="bi bi-book m-2"></i>Read More</a>
+                                    <a class="btn btn-primary rounded-pill mt-auto "  href="{% url 'news:news-detail' id=news.id %}"><i class="bi bi-book m-2"></i>Read More</a>
                                 {% else %}
-                                <a class="btn btn-primary mt-auto" href="{% url 'news:news-detail-admin-preview' id=news.id %}">Read more <i class="bi bi-book"></i> </a>
+                                    <a class="btn btn-primary rounded-pill mt-auto" href="{% url 'news:news-detail-admin-preview' id=news.id %}"><i class="bi bi-book m-2"></i>Read more </a>
                                 {% endif %}
                             {% endif %}
                         </div>

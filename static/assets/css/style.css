@@ -1,6 +1,6 @@
 :root {
   --bluecolor: #00c4ff;
-  --serviceicon: #58a7fc;
+  --serviceicon: #8fe5fc;
 }
 /*--------------------------------------------------------------
 # General
@@ -20,7 +20,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #51d8af;
+  color: var(--bluecolor);
   outline: none;
   text-decoration: none;
 }
@@ -493,7 +493,7 @@ h6 {
 
 #home .hero-slider::before {
   content: "";
-  background-color: #e9e9e9de;
+  background-color: #ffffffd0;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -884,13 +884,13 @@ section {
   transition: 0.5s;
   margin: 10px;
   color: white;
-  background: #000000;
+  background: #e90707;
 }
 
-/* #news .cta-btn:hover {
-  background: #2904fb;
+ #news .cta-btn:hover {
+  background: #b41b1b;
 
-} */
+} 
 
 
 
