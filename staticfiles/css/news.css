@@ -1,4 +1,3 @@
-
 .carousel-inner img{
     height:420px;
 } 
@@ -35,4 +34,8 @@
         height: 100px; /* Sesuaikan tinggi gradiasi sesuai kebutuhan */
         background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.923)); /* Sesuaikan warna gradiasi sesuai kebutuhan */
     }
+}
+.custom-card {
+    height: 480px; /* Sesuaikan dengan tinggi maksimum yang Anda inginkan */
+    overflow: hidden; /* Untuk mengatasi konten yang terlalu panjang */
 }

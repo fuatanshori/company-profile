@@ -32,11 +32,12 @@
                 {% else %}
                     <figure class="mb-4"><img class="img-fluid rounded img-detail-news" src="{{ news.news_image.url }}" alt="{{ news.news_title }}"/></figure>
                     <!-- Post content -->
-                    <section class="mb-5">
+                    <section class="mb-0">
                         <p class="fs-6 mb-4">{{ news.news_description|linebreaksbr}}</p>
                     </section>
                 {% endif %}
             </article>
+            <div><a class="btn btn-outline-primary rounded-pill mb-4 px-4" href="{% url 'news:news' %}"> <i class="bi bi-arrow-left-circle"></i> Kembali</a></div>
         </div>
     </div>
 </div>

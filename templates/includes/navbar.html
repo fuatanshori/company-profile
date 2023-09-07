@@ -17,13 +17,13 @@
             <a class="nav-link scrollto" href="{% url 'plnnusantarapower:index' %}#services">Services</a>
           </li>
           <li>
-            <a class="nav-link scrollto " href="{% url 'plnnusantarapower:index' %}#gallery">Galery</a>
+            <a class="nav-link scrollto " href="{% url 'plnnusantarapower:index' %}#gallery">Gallery</a>
           </li>
           <li>
             {% if request.path == "/" %}
             <a class="nav-link scrollto " href="{% url 'plnnusantarapower:index' %} #news">News</a>
             {% else %}
-            <a class="nav-link scrollto {% if request.path == '/news/' or request.path|slice:'0:18' == '/news/news-detail/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
+            <a class="nav-link scrollto {% if request.path == '/news/' or request.path|slice:'0:18' == '/news/news-detail/' or request.path == '/news/news-admin-preview/' or request.path|slice:'0:32' == '/news/news-detail-admin-preview/' %} active {% endif %}" href="{% url 'news:news' %}">News</a>
             {% endif %}
           </li>
           <li>

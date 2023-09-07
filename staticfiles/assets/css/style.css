@@ -447,11 +447,11 @@ h6 {
 
 @media (max-width: 767px) {
   #home .hero-content h2 {
-    font-size: 25px;
+    font-size: 24px;
   }
   #home {
     width: 100%;
-    height: 60vh;
+    height: 65vh;
   }
 
 }
@@ -673,6 +673,11 @@ section {
 #about .content p {
   line-height: 26px;
 }
+#about .paragraf p{
+  text-align: justify;
+  font-size: 14px;
+}
+
 
 #about .content p:last-child {
   margin-bottom: 0;
@@ -874,7 +879,7 @@ section {
 
 #news .cta-btn {
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
@@ -882,13 +887,13 @@ section {
   border-radius: 3px;
   transition: 0.5s;
   margin: 10px;
-  border: 3px solid #fff;
-  color: #fff;
+  color: white;
+  background: #ff0000;
 }
 
 #news .cta-btn:hover {
   background: #FF6600;
-  border: 3px solid #FF6600;
+
 }
 
 

@@ -1,11 +1,7 @@
-/**
-* Template Name: Reveal
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
+:root {
+  --bluecolor: #1e90ff;
+  --white: #ffffff;
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -879,7 +875,7 @@ section {
 
 #news .cta-btn {
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
@@ -888,15 +884,13 @@ section {
   transition: 0.5s;
   margin: 10px;
   color: white;
-  border: 3px solid #e7e7e7;
-  background: #222222;
+  background: #ff7700;
 }
 
-#news .cta-btn:hover {
-  background: #FF6600;
-  border: 3px solid whitesmoke;
+/* #news .cta-btn:hover {
+  background: #2904fb;
 
-}
+} */
 
 
 
