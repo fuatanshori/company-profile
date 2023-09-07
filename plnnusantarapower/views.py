@@ -5,15 +5,17 @@ from services.models import Services
 from gallery.models import Gallery
 from contact.models import Contact
 from contact.maps import maps_location
+from lihatberita.models import LihatBerita
 from .utils import get_data_or_none
 
 
 def index(request):
-    intro       = get_data_or_none(Intro)
-    about       = get_data_or_none(About)
-    services    = get_data_or_none(Services)
-    gallery     = get_data_or_none(Gallery)
-    contact     = get_data_or_none(Contact)
+    intro           = get_data_or_none(Intro)
+    about           = get_data_or_none(About)
+    services        = get_data_or_none(Services)
+    gallery         = get_data_or_none(Gallery)
+    contact         = get_data_or_none(Contact)
+    lihatberita     = get_data_or_none(LihatBerita)
     
 
     context = {
@@ -42,7 +44,9 @@ def index(request):
         'contact_email': contact.email if contact else 'Email Masih Kosong',
         'contact_maps': contact.maps if contact else maps_location,
 
-        
+        'lihat_berita_title': lihatberita.title if lihatberita else 'Lihat Berita Terbaru',        
+        'lihat_berita_description': lihatberita.description if lihatberita else 'Deskripsi Kosong',        
+        'lihat_berita_button_name': lihatberita.button_name if lihatberita else 'Button Kosong',        
 
     }
 

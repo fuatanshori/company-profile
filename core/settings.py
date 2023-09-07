@@ -53,6 +53,7 @@ INSTALLED_APPS+=[
     'news.apps.NewsConfig',
     'contact.apps.ContactConfig',
     'topbar.apps.TopbarConfig',
+    'lihatberita.apps.LihatberitaConfig'
 ]
 
 AUTH_USER_MODEL ='user.User'
@@ -270,6 +271,8 @@ JAZZMIN_SETTINGS = {
         
         "topbar.TopBar":"fa fa-bars",
         "topbar.Social":"fa fa-comments",
+        
+        "lihatberita.LihatBerita":"fa fa-list-alt",
         
         "user.User":"fa fa-user",
 

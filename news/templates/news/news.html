@@ -27,10 +27,10 @@
                     {% for  crousel in crousels %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
                             <div class="carousel-image">
-                                <img  src=" {% if crousel.news_image %} {{ crousel.news_image.url }} {% else %}{% endif %}" class="d-block w-100" style="max-height: 380px;" >
+                                <img  src=" {% if crousel.news_image %} {{ crousel.news_image.url }} {% else %}{% endif %}" class="d-block w-100" style="max-height: 360px;" >
                             </div>
                             <div class="carousel-caption d-none d-md-block">
-                                <h3 class="fw-bolder h4 text-white">{{ crousel.news_title }}</h3>
+                                <a href="{% url 'news:news-detail' id=crousel.id %}"><h3 class="fw-bolder h4 text-white">{{ crousel.news_title }}</h3></a>
                                 <p>{{crousel.created_at|date:"F y"}}</p>
                             </div>
                         </div>
