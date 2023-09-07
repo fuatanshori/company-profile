@@ -1,6 +1,6 @@
 :root {
-  --bluecolor: #1e90ff;
-  --white: #ffffff;
+  --bluecolor: #00c4ff;
+  --serviceicon: #58a7fc;
 }
 /*--------------------------------------------------------------
 # General
@@ -12,7 +12,7 @@ body {
 }
 
 a {
-  color: #50d8af;
+  color: var(--bluecolor);
   text-decoration: none;
   transition: 0.5s;
 }
@@ -52,7 +52,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #007bff;
+  background: var(--bluecolor);
   width: 40px;
   height: 40px;
   transition: all 0.4s;
@@ -65,7 +65,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #007bff;
+  background: var(--bluecolor);
   color: #fff;
 }
 
@@ -87,7 +87,7 @@ h6 {
 
 #topbar .contact-info i {
   font-style: normal;
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 #topbar .contact-info i a,
@@ -102,7 +102,7 @@ h6 {
 }
 
 #topbar .contact-info i a:hover {
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 #topbar .social-links a {
@@ -114,7 +114,7 @@ h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 #topbar .social-links a:first-child {
@@ -141,11 +141,11 @@ h6 {
 }
 
 #header #logo h1 a {
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 #header #logo h1 a span {
-  color: #50d8af;
+  color: var(--bluecolor);
 }
 
 #header #logo img {
@@ -218,7 +218,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 .navbar .dropdown ul {
@@ -252,7 +252,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #50d8af;
+  color: var(--bluecolor);
 }
 
 .navbar .dropdown:hover>ul {
@@ -351,7 +351,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 .navbar-mobile .getstarted,
@@ -386,7 +386,7 @@ h6 {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: #50d8af;
+  color: var(--bluecolor);
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
@@ -419,7 +419,7 @@ h6 {
 }
 
 #home .hero-content h2 {
-  color: #007bff;
+  color: var(--bluecolor);
   font-size: 50px;
   font-weight: 600;
 }
@@ -467,23 +467,23 @@ h6 {
 }
 
 #home .hero-content .btn-get-started {
-  background: #007bff;
-  border: 2px solid #007bff;
+  background: var(--bluecolor);
+  border: 2px solid var(--bluecolor);
 }
 
 #home .hero-content .btn-get-started:hover {
   background: none;
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 #home .hero-content .btn-projects {
-  background: #50d8af;
-  border: 2px solid #50d8af;
+  background: var(--bluecolor);
+  border: 2px solid var(--bluecolor);
 }
 
 #home .hero-content .btn-projects:hover {
   background: none;
-  color: #50d8af;
+  color: var(--bluecolor);
 }
 
 #home .hero-slider {
@@ -527,7 +527,7 @@ section {
 
 .section-header h2 {
   font-size: 32px;
-  color: #007bff;
+  color: var(--bluecolor);
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
@@ -653,7 +653,7 @@ section {
 }
 
 #about .content h2 {
-  color: #007bff;
+  color: var(--bluecolor);
   font-weight: 700;
   font-size: 36px;
   font-family: "Raleway", sans-serif;
@@ -682,7 +682,7 @@ section {
 #about .content i {
   font-size: 20px;
   padding-right: 4px;
-  color: #50d8af;
+  color: var(--bluecolor);
 }
 
 #about .content ul {
@@ -728,8 +728,8 @@ section {
 }
 
 #services .box .icon i:before {
-  background: #007bff;
-  background: linear-gradient(45deg, #007bff 0%, #58a7fc 100%);
+  background: var(--bluecolor);
+  background: linear-gradient(45deg, var(--bluecolor) 0%, var(--serviceicon) 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -850,7 +850,7 @@ section {
 /* Call To Action Section
 --------------------------------*/
 #news {
-  background: #007bff;
+  background: var(--bluecolor);
   background-size: cover;
   padding: 40px 0;
 }
@@ -884,7 +884,7 @@ section {
   transition: 0.5s;
   margin: 10px;
   color: white;
-  background: #ff7700;
+  background: #000000;
 }
 
 /* #news .cta-btn:hover {
@@ -909,7 +909,7 @@ section {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 #contact .contact-info address,
@@ -931,7 +931,7 @@ section {
 }
 
 #contact .contact-info a:hover {
-  color: #007bff;
+  color: var(--bluecolor);
 }
 
 #contact .contact-address,
@@ -998,5 +998,5 @@ section {
 }
 
 #footer .credits a {
-  color: #007bff;
+  color: var(--bluecolor);
 }
